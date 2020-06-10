@@ -1,3 +1,6 @@
 from django.contrib import admin
+from . import models
 
-# Register your models here.
+@admin.register(models.MediaMention)
+class MediaMentionAdmin(admin.ModelAdmin):
+    list_display = ('last_name', 'title', 'category', 'publication_date',)
